@@ -1,0 +1,9 @@
+<!-- CS478 Project 4: Threads -->
+<!-- Name:   Shyam Patel      -->
+<!-- NetID:  spate54          -->
+<!-- Date:   Nov 24, 2019     -->
+
+<vector android:height="115.55556dp" android:viewportHeight="208"
+    android:viewportWidth="360" android:width="200dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/colorThreadB" android:pathData="M3.522,164.408a176.349,40.079 0,1 0,352.698 0a176.349,40.079 0,1 0,-352.698 0z"/>
+</vector>

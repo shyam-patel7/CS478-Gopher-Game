@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CS478 Project 4: Threads -->
+<!-- Name:   Shyam Patel      -->
+<!-- NetID:  spate54          -->
+<!-- Date:   Nov 24, 2019     -->
+
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/colorPrimary"/>
+    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
+</adaptive-icon>

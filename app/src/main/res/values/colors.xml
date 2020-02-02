@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CS478 Project 4: Threads -->
+<!-- Name:   Shyam Patel      -->
+<!-- NetID:  spate54          -->
+<!-- Date:   Nov 24, 2019     -->
+
+<resources>
+    <color name="colorPrimary">#5469D5</color>
+    <color name="colorPrimaryDark">#141419</color>
+    <color name="colorSecondary">#F2C626</color>
+    <color name="colorAccent">#19CEE5</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorThreadA">#08C8E0</color>
+    <color name="colorThreadB">#EBBD15</color>
+    <color name="colorLightThreadA">#00E5FF</color>
+    <color name="colorLightThreadB">#FFC700</color>
+    <color name="colorDarkThreadA">#05B7CE</color>
+    <color name="colorDarkThreadB">#D5A80C</color>
+</resources>

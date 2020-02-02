@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CS478 Project 4: Threads -->
+<!-- Name:   Shyam Patel      -->
+<!-- NetID:  spate54          -->
+<!-- Date:   Nov 24, 2019     -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="@color/colorDarkThreadB"
+                android:endColor="@color/colorLightThreadB" />
+            <stroke android:color="@color/colorBlack" android:width="1dp" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CS478 Project 4: Threads -->
+<!-- Name:   Shyam Patel      -->
+<!-- NetID:  spate54          -->
+<!-- Date:   Nov 24, 2019     -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_thread_a"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/thread_a"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_thread_a" />
+
+    <ImageView
+        android:id="@+id/iv_thread_b"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/thread_b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_thread_b" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/thread_a"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/iv_thread_a"
+        app:layout_constraintTop_toTopOf="@+id/iv_thread_a" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="7dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/thread_b"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toStartOf="@+id/iv_thread_b"
+        app:layout_constraintTop_toTopOf="@+id/iv_thread_b" />
+
+    <GridLayout
+        android:id="@+id/activity_main_gl"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="6dp"
+        android:columnCount="10"
+        android:rowCount="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_thread_a">
+
+        <ImageView
+            android:id="@+id/activity_main_iv_00"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_01"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_02"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_03"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_04"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_05"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_06"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_07"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_08"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_09"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_10"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_11"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_12"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_13"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_14"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_15"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_16"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_17"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_18"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_19"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_20"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_21"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_22"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_23"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_24"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_25"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_26"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_27"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_28"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_29"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_30"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_31"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_32"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_33"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_34"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_35"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_36"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_37"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_38"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_39"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_40"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_41"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_42"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_43"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_44"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_45"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_46"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_47"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_48"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_49"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_50"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_51"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_52"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_53"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_54"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_55"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_56"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_57"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_58"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_59"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_60"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_61"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_62"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_63"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_64"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_65"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_66"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_67"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_68"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_69"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_70"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_71"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_72"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_73"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_74"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_75"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_76"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_77"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_78"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_79"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_80"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_81"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_82"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_83"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_84"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_85"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_86"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_87"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_88"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_89"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_90"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_91"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_92"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_93"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_94"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_95"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_96"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_97"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_98"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+
+        <ImageView
+            android:id="@+id/activity_main_iv_99"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:alpha="0.25"
+            android:contentDescription="@string/gopher_hole"
+            app:srcCompat="@drawable/ic_hole" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/activity_main_tv_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:alpha="0"
+        android:fontFamily="sans-serif-thin"
+        android:text="@string/success"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/activity_main_gl"
+        app:layout_constraintStart_toStartOf="@+id/activity_main_gl"
+        app:layout_constraintTop_toTopOf="@+id/activity_main_gl" />
+
+    <Button
+        android:id="@+id/activity_main_btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="@color/colorSecondary"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/start"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_gl" />
+
+    <Switch
+        android:id="@+id/activity_main_sw_continuous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:checked="false"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/continuous"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlack"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_gl" />
+
+    <TextView
+        android:id="@+id/activity_main_tv_log"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingStart="8dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="0dp"
+        android:scrollbars="vertical"
+        android:text="@string/welcome"
+        android:textColor="@color/colorBlack"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_btn_start" />
+</androidx.constraintlayout.widget.ConstraintLayout>

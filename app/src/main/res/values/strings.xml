@@ -1,0 +1,31 @@
+<!-- CS478 Project 4: Threads -->
+<!-- Name:   Shyam Patel      -->
+<!-- NetID:  spate54          -->
+<!-- Date:   Nov 24, 2019     -->
+
+<resources>
+    <string name="app_name">Gopher</string>
+    <string name="gopher_hide">The gopher is hiding at </string>
+    <string name="gopher_hole">Gopher Hole</string>
+    <string name="success">Hooray!</string>
+    <string name="thread_a">Thread A</string>
+    <string name="thread_a_success">Thread A found the gopher at</string>
+    <string name="thread_a_disaster">Thread A guessed again</string>
+    <string name="thread_a_near_miss">Thread A nearly missed at</string>
+    <string name="thread_a_close">Thread A was close at</string>
+    <string name="thread_a_complete_miss">Thread A completely missed at</string>
+    <string name="thread_b">Thread B</string>
+    <string name="thread_b_success">Thread B found the gopher at</string>
+    <string name="thread_b_disaster">Thread B guessed again</string>
+    <string name="thread_b_near_miss">Thread B nearly missed at</string>
+    <string name="thread_b_close">Thread B was close at</string>
+    <string name="thread_b_complete_miss">Thread B completely missed at</string>
+    <string name="start">Start New Game</string>
+    <string name="restart">Restart Game</string>
+    <string name="continuous">Continuous Play Mode</string>
+    <string name="continuous_off">Continuous play mode disabled</string>
+    <string name="continuous_on">Continuous play mode enabled</string>
+    <string name="welcome">Welcome to Gopher!\nTap the START NEW GAME button to begin.\nUse the switch to enable/disable continuous play mode.\nWhen enabled, the two threads play without interruption until one thread wins the game.\nThread A is programmed to make educated guesses based on previous guesses.\nThread B solely makes random guesses.\n</string>
+    <string name="start_continuous_off">Welcome to Gopher!\nThread A is programmed to make educated guesses based on previous guesses.\nThread B solely makes random guesses.\nContinuous play mode disabled.\n</string>
+    <string name="start_continuous_on">Welcome to Gopher!\nThread A is programmed to make educated guesses based on previous guesses.\nThread B solely makes random guesses.\nContinuous play mode enabled.\n</string>
+</resources>
